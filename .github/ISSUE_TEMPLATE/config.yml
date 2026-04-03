@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Release support placeholder
+    url: https://example.com/lacrima-support
+    about: This repository is release-only. Use your real support path here for user help.
+  - name: Security reporting placeholder
+    url: https://example.com/lacrima-security
+    about: Do not post vulnerabilities publicly in this repository. Replace this with your private security contact path.
