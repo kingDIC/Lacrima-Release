@@ -1,34 +1,43 @@
 # Manual Smoke Checklist
 
-Use this checklist for each shipped Windows version before or immediately after publishing the stable release.
+Use this checklist for each new **Lacrima Tears of Life** Windows release.
 
-## Installation
+## Release Page
 
-- Confirm the installer `.exe` downloads from the GitHub Release page.
-- Run the installer and verify installation completes without an unexpected hard failure.
+- Confirm the new GitHub Release is tagged correctly, for example `v0.10.3`.
+- Confirm the release notes clearly say normal users should download `LacrimaTearsOfLife-Setup.exe` only.
+- Confirm `LacrimaTearsOfLife-Setup.exe` is attached.
+- Confirm `RELEASES` is attached.
+- Confirm the matching `*-full.nupkg` is attached.
+
+## Install Flow
+
+- Download `LacrimaTearsOfLife-Setup.exe` from the public Releases page.
+- Run the installer.
+- Confirm installation completes without an unexpected hard failure.
 
 ## First Launch
 
-- Launch the installed app.
-- Confirm the splash or loading screen appears.
-- Confirm the main window opens successfully.
+- Launch the installed Lacrima app.
+- Confirm the loading screen appears.
+- Confirm the main window opens.
+- Confirm the app reaches the normal Lacrima shell instead of closing immediately.
 
-## Update Path
+## Basic Lacrima Checks
 
-- In the installed app, use `Help -> Check for Updates`.
-- Confirm the update check completes against this repository's release feed.
-- Test updating from an older installed version to the newly published release.
-- Confirm the app launches successfully after the update.
+- Confirm card data loads.
+- Confirm the main app shell is responsive.
+- Confirm one or two core views open normally, such as rules or field.
 
-## Release Asset Sanity
+## Current Rollout Note
 
-- Confirm the GitHub Release contains the installer `.exe`.
-- Confirm the GitHub Release contains `RELEASES`.
-- Confirm the GitHub Release contains the matching `*-full.nupkg`.
-- If a delta package was generated, confirm it is attached and named consistently.
+Lacrima is currently manual-download-first.
 
-## Public Download Sanity
+That means this checklist should focus on:
 
-- Confirm the release is tagged with `vX.Y.Z`.
-- Confirm the release notes and asset list are visible on the public Releases page.
-- Confirm any unsigned-build warning note is still accurate for the current distribution state.
+- installer download
+- installation success
+- first launch success
+- core app usability
+
+Do not rely on in-app update checks as the primary release gate for this phase.

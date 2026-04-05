@@ -2,58 +2,76 @@
 
 This repository is the public Windows release endpoint for **Lacrima Tears of Life**.
 
-It exists to host release artifacts for the stable channel and to provide the asset layout required by the Electron Forge + Squirrel.Windows update flow.
+It is intentionally narrow in scope: this repo exists to ship official Lacrima Windows builds, not to mirror development.
 
-## Tag Format
+## User-Facing Rule
 
-All shipped releases should use Git tags in this format:
+For every public release, the only file a normal Lacrima user should be told to download is:
 
-`vX.Y.Z`
+-   `LacrimaTearsOfLife-Setup.exe`
 
-Examples:
+The other release assets exist because of the current Windows packaging format and should not be presented as normal-user downloads.
 
-- `v1.0.0`
-- `v1.2.3`
+## Required Release Assets
 
-## Stable Channel Only
+Every public Lacrima Windows release should include:
 
-This repository is for the **stable** release channel only.
-
-Pre-release, preview, experimental, multiplayer-related, or internal distribution channels are out of scope unless the repository policy is intentionally revised later.
-
-## Required Asset Contract
-
-Every shipped Windows release must include:
-
-- installer `.exe`
-- `RELEASES`
-- `*-full.nupkg`
+-   `LacrimaTearsOfLife-Setup.exe`
+-   `RELEASES`
+-   `LacrimaTearsOfLife-X.Y.Z-full.nupkg`
 
 Optional:
 
-- delta `.nupkg` if generated
+-   `LacrimaTearsOfLife-X.Y.Z-delta.nupkg` if generated
 
-If a version is published for end users, these required assets should be attached to the GitHub Release together.
+## Why These Assets Exist
+
+Lacrima currently uses a Squirrel-based Windows release layout.
+
+That means:
+
+-   `Setup.exe` is the real installer for players
+-   `RELEASES` and `.nupkg` are support assets for the installer/update system
+-   users should not be told to manually download `RELEASES` or `.nupkg`
+
+## Tag Format
+
+All shipped releases should use this tag format:
+
+-   `vX.Y.Z`
+
+Examples:
+
+-   `v0.10.3`
+-   `v0.10.4`
+
+## Stable Channel Only
+
+This repository is for Lacrima's **stable Windows channel** only.
+
+No source snapshots, internal builds, multiplayer test builds, or private experiments should be treated as official releases here.
 
 ## Update Safety Rules
 
-The Electron app uses this repository's release assets for Windows auto-updates.
+Even though the current user messaging is manual-download-first, the release asset set still needs to stay intact.
 
 Because of that:
 
-- do not delete required assets from an already-published release
-- do not replace assets in place after clients may already reference them
-- do not rename the repository owner or repository name casually once clients are installed
+-   do not delete required assets from published releases
+-   do not casually replace published assets in place
+-   do not rename the repository owner or repository name casually
 
-Changing or removing published update artifacts can break update detection or update delivery for existing installations.
+## Operational Boundary
 
-## Operational Intent
+This repository should stay:
 
-This repository should remain a clean public distribution counterpart only.
+-   a Lacrima Windows download repo
+-   a release-history repo
+-   a place for release-facing documentation only
 
-It should not become:
+This repository should not become:
 
-- a source mirror
-- a private development dump
-- a backlog for source-level bug reports
-- a general-purpose project management repository
+-   a source mirror
+-   a feature-planning repo
+-   a gameplay discussion board
+-   a source-level bug backlog

@@ -1,32 +1,36 @@
 # Support
 
-This repository is for public Windows downloads and release distribution only.
+This repository is the public Windows download repo for **Lacrima Tears of Life**.
 
-It is not the main support or source-development home for **Lacrima Tears of Life**.
+If someone is here because they want to install Lacrima, the main answer is simple:
 
-## What This Repository Covers
+- go to **Releases**
+- download `LacrimaTearsOfLife-Setup.exe`
+- ignore `RELEASES` and `.nupkg`
 
-- release artifacts
+## What This Repo Covers
+
 - release availability
-- download-facing documentation
+- installer downloads
+- release-facing documentation
+- public Windows distribution notes
 
-## What It Does Not Cover
+## What This Repo Does Not Cover
 
-- source-level bug reports
-- gameplay support workflows
-- feature requests
-- private development discussions
+- private source code discussion
+- gameplay design discussion
+- source-level debugging
+- feature planning
+- private multiplayer/backend work
 
-## Support Contact Placeholders
+## Support Placeholders
 
-Update these placeholders with the real support paths you want users to use:
+Replace these with the real Lacrima support paths you want users to use:
 
-- General support: `kingDIC`
-- Bug reporting: `kingDIC`
-- Patch notes or announcements: `Discord`
+- General Lacrima support: `kingDIC`
+- Installation help: `kingDIC`
+- Patch notes / community updates: `Discord`
 
-## Download Guidance
+## Security
 
-For official Windows builds, use the repository's **Releases** page.
-
-If you reached this repository for troubleshooting, use the support contact path above rather than opening source-level issues here.
+For security concerns, do not post details publicly here. Use the private reporting path described in [SECURITY.md](SECURITY.md).
